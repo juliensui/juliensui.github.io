@@ -1,0 +1,148 @@
+<!-- En haut de chaque page -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>PROJET</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">Spectra<span>lis</span></div>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-link">Accueil</a>
+      <a href="project.html" class="nav-link">Projet</a>
+      <a href="team.html" class="nav-link">Équipe</a>
+      <a href="resources.html" class="nav-link">Ressources</a>
+    </nav>
+  </header>
+
+  <main>
+    <main>
+  <section class="section">
+    <h1 class="section-title">Le projet</h1>
+    <p class="section-subtitle">
+      Un analyseur de spectre audio temps réel couplé à un moteur de synthèse granulaire,
+      réalisé dans le cadre du projet de semestre EPITA.
+    </p>
+
+    <div class="card-grid">
+      <article class="card">
+        <h2>Objectifs pédagogiques</h2>
+        <p>
+          Concevoir une application audio temps réel, manipuler la FFT, expérimenter la synthèse granulaire
+          et développer une interface graphique ergonomique en respectant un cahier des charges précis.
+        </p>
+      </article>
+
+      <article class="card">
+        <h2>Fonctionnalités principales</h2>
+        <ul>
+          <li>Visualisation du spectre fréquentiel en temps réel.</li>
+          <li>Contrôle interactif des paramètres de synthèse granulaire.</li>
+          <li>Lecture, analyse et transformation de signaux audio.</li>
+          <li>Interface graphique moderne et responsive.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Technologies utilisées</h2>
+        <ul>
+          <li>Langage Rust pour le cœur du traitement.</li>
+          <li>FFT pour l’analyse de fréquence.</li>
+          <li>Synthèse granulaire pour la transformation du son.</li>
+          <li>Bibliothèque GUI adaptée au projet (Rust).</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Architecture</h2>
+    <p class="section-subtitle">
+      Le projet est structuré en modules clairs : entrée/sortie audio, analyse fréquentielle, synthèse,
+      et interface graphique.
+    </p>
+
+    <div class="card-grid">
+      <article class="card">
+        <h3>Entrées / Sorties audio</h3>
+        <p>
+          Gestion du flux audio en temps réel, récupération des buffers d’échantillons, et acheminement
+          vers les modules d’analyse et de synthèse.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Analyse FFT</h3>
+        <p>
+          Calcul du spectre à partir des fenêtres d’échantillons, production de trames fréquentielles
+          réutilisables par l’interface graphique et la logique de visualisation.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Synthèse granulaire</h3>
+        <p>
+          Découpage du signal en grains, recomposition contrôlée par les paramètres utilisateur
+          (taille des grains, densité, hauteur, etc.).
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Interface graphique</h3>
+        <p>
+          Affichage du spectre, contrôles des paramètres et retour visuel fluide pour l’utilisateur
+          grâce à une mise à jour régulière des données.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Conformité au cahier des charges</h2>
+    <p class="section-subtitle">
+      Le projet respecte les contraintes définies dans le sujet libre : objectifs, livrables et aspects techniques.
+    </p>
+
+    <div class="card-grid">
+      <article class="card">
+        <h3>Livrables</h3>
+        <ul>
+          <li>Application fonctionnelle (version complète et version lite).</li>
+          <li>Rapport détaillé du projet.</li>
+          <li>Site web de présentation.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Contraintes techniques</h3>
+        <ul>
+          <li>Traitement audio en temps réel.</li>
+          <li>Architecture modulaire et claire.</li>
+          <li>Code documenté et structuré.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Pistes d’évolution</h3>
+        <ul>
+          <li>Effets audio supplémentaires.</li>
+          <li>Préréglages de synthèse.</li>
+          <li>Export des transformations audio.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+</main>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Projet Audio Spectrum Analyzer & Synthèse Granulaire – EPITA</p>
+  </footer>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

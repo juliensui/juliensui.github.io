@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>SPECTRALIS</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">Spectra<span>lis</span></div>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-link">Accueil</a>
+      <a href="project.html" class="nav-link">Projet</a>
+      <a href="team.html" class="nav-link">Équipe</a>
+      <a href="resources.html" class="nav-link">Ressources</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section hero">
+      <div class="hero-text">
+        <h1>Audio Spectrum <span>& Granular Synth</span></h1>
+        <p>
+          Un analyseur de spectre temps réel couplé à un moteur de synthèse granulaire,
+          développé dans le cadre du projet de semestre EPITA.
+        </p>
+
+        <div class="hero-badges">
+          <span class="badge">FFT temps réel</span>
+          <span class="badge">Synthèse granulaire</span>
+          <span class="badge">Rust + GUI</span>
+          <span class="badge">Projet S4</span>
+        </div>
+
+        <div class="hero-actions">
+          <a href="project.html" class="btn-primary">Découvrir le projet</a>
+          <a href="resources.html" class="btn-ghost">Télécharger la version lite</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="gui-card">
+          <div class="gui-card-inner">
+            <!-- Vraie capture de la GUI -->
+            <img src="images/gui.png" alt="Interface graphique du spectrogramme et de la synthèse granulaire" class="gui-image">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Fonctionnalités principales</h2>
+      <p class="section-subtitle">
+        Une chaîne audio complète : de l’entrée du signal jusqu’à la visualisation et à la transformation sonore.
+      </p>
+
+      <div class="card-grid">
+        <article class="card">
+          <h3>Analyse de spectre</h3>
+          <p>
+            Visualisation en temps réel du contenu fréquentiel du signal audio grâce à une FFT optimisée.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Synthèse granulaire</h3>
+          <p>
+            Manipulation créative du son par grains : taille, densité, hauteur, pour explorer de nouvelles textures.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Interface réactive</h3>
+          <p>
+            Contrôles clairs, retour visuel immédiat et expérience fluide pour l’utilisateur.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Projet Audio Spectrum Analyzer & Synthèse Granulaire – EPITA</p>
+  </footer>
+</body>
+</html>

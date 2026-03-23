@@ -1,0 +1,88 @@
+<!-- En haut de chaque page -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>RESSOURCES</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">Spectra<span>lis</span></div>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-link">Accueil</a>
+      <a href="project.html" class="nav-link">Projet</a>
+      <a href="team.html" class="nav-link">Équipe</a>
+      <a href="resources.html" class="nav-link">Ressources</a>
+    </nav>
+  </header>
+
+  <main>
+    <main>
+  <section class="section">
+    <h1 class="section-title">Ressources & téléchargements</h1>
+    <p class="section-subtitle">
+      Retrouvez ici les livrables associés au projet : rapport, code source, version lite de l’application
+      et ressources complémentaires.
+    </p>
+
+    <div class="card-grid">
+      <article class="card">
+        <h2>Rapport du projet</h2>
+        <p>
+          Rapport complet décrivant le contexte, les choix techniques, l’architecture, les résultats
+          et les perspectives du projet.
+        </p>
+        <a href="Rendu_Rust_Spectralis.pdf" class="btn-primary" download>
+          Télécharger le rapport (PDF)
+        </a>
+      </article>
+
+      <article class="card">
+        <h2>Code source</h2>
+        <p>
+          Accès au code source du projet, organisé par modules (audio, FFT, synthèse, interface),
+          accompagné d’instructions de compilation.
+        </p>
+        <a href="https://github.com/Izios515/Spectralis" class="btn-ghost" target="_blank">
+          Voir le dépôt Git
+        </a>
+      </article>
+
+      <article class="card">
+        <h2>Version lite</h2>
+        <p>
+          Version allégée de l’application, permettant de découvrir les principales fonctionnalités
+          sans configuration avancée.
+        </p>
+        <a href="downloads/version_lite.zip" class="btn-primary" download>
+          Télécharger la version lite
+        </a>
+      </article>
+
+      <article class="card">
+        <h2>Ressources complémentaires</h2>
+        <p>
+          Liens vers la documentation des bibliothèques utilisées, des articles sur la FFT
+          et la synthèse granulaire, ainsi que des ressources pédagogiques.
+        </p>
+        <ul>
+          <li><a href="#" class="nav-link">Documentation Rust</a></li>
+          <li><a href="#" class="nav-link">Référence FFT</a></li>
+          <li><a href="#" class="nav-link">Introduction à la synthèse granulaire</a></li>
+        </ul>
+      </article>
+    </div>
+  </section>
+</main>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Projet Audio Spectrum Analyzer & Synthèse Granulaire – EPITA</p>
+  </footer>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
