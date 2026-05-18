@@ -1,33 +1,40 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8">
-  <title>ÉQUIPE</title>
-  <link rel="stylesheet" href="style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spectralis — Équipe</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
   <header class="site-header">
-    <div class="logo">Spectra<span>lis</span></div>
+    <a class="logo" href="index.html">Spectral<span>is</span></a>
     <nav class="main-nav">
-      <a href="index.html" class="nav-link">Accueil</a>
-      <a href="project.html" class="nav-link">Projet</a>
-      <a href="team.html" class="nav-link">Équipe</a>
-      <a href="resources.html" class="nav-link">Ressources</a>
+      <a class="nav-link" href="index.html">Accueil</a>
+      <a class="nav-link" href="project.html">Projet</a>
+      <a class="nav-link" aria-current="page" href="team.html">Équipe</a>
+      <a class="nav-link" href="resources.html">Ressources</a>
     </nav>
   </header>
 
   <main>
-    <section class="section">
-      <h1 class="section-title">L'équipe</h1>
-      <p class="section-subtitle">
-        Une équipe de développeurs motivés, répartis par pôles techniques pour couvrir l’ensemble de la chaîne audio.
+    <section class="section reveal-on-scroll">
+      <h1 class="section-title">Équipe & organisation du travail</h1>
+      <p class="section-subtitle">Une équipe de développeurs motivés. Répartition par pôles techniques et preuves de
+        l’avancement réel du projet.</p>
+      <p class="text-muted">
+        Le projet a été mené de manière incrémentale, avec des points de synchronisation réguliers entre les pôles.
+        Chaque membre dispose d’une responsabilité principale tout en contribuant aux revues de code, aux tests et aux
+        arbitrages techniques.
       </p>
+
 
       <div class="card-grid">
         <article class="card">
           <div class="member-photo-wrapper">
-            <img src="julien.dos-santos.jpg" alt="Photo de Nom Prénom" class="member-photo">
+            <img src="images/julien.dos-santos.jpg" alt="Photo de Nom Prénom" class="member-photo">
           </div>
           <h2>DOS SANTOS Julien</h2>
           <p class="text-muted">Responsable Interface Graphique & Expérience Utilisateur</p>
@@ -39,7 +46,7 @@
 
         <article class="card">
           <div class="member-photo-wrapper">
-            <img src="florent.delbey.jpg" alt="Photo de Nom Prénom" class="member-photo">
+            <img src="images/florent.delbey.jpg" alt="Photo de Nom Prénom" class="member-photo">
           </div>
           <h2>DELBEY Florent</h2>
           <p class="text-muted">Responsable Analyse FFT</p>
@@ -51,7 +58,7 @@
 
         <article class="card">
           <div class="member-photo-wrapper">
-            <img src="david.guetta.jpg" alt="Photo de Nom Prénom" class="member-photo">
+            <img src="images/david.guetta.jpg" alt="Photo de Nom Prénom" class="member-photo">
           </div>
           <h2>GUETTA Oren</h2>
           <p class="text-muted">Responsable Synthèse Granulaire</p>
@@ -63,7 +70,7 @@
 
         <article class="card">
           <div class="member-photo-wrapper">
-            <img src="tao.brouta-besset.jpg" alt="Photo de Nom Prénom" class="member-photo">
+            <img src="images/tao.brouta-besset.jpg" alt="Photo de Nom Prénom" class="member-photo">
           </div>
           <h2>BROUTA BESSET Tao</h2>
           <p class="text-muted">Responsable I/O Audio & Intégration</p>
@@ -75,43 +82,46 @@
       </div>
     </section>
 
-    <section class="section">
-      <h2 class="section-title">Organisation du travail</h2>
-      <p class="section-subtitle">
-        Le projet a été mené de manière incrémentale, avec des points de synchronisation réguliers
-        entre les pôles.
-      </p>
 
+    <section class="section reveal-on-scroll">
+      <h2 class="section-title">Méthode de travail</h2>
       <div class="card-grid">
         <article class="card">
           <h3>Méthode</h3>
-          <p>
-            Découpage en itérations, définition de jalons (premier rendu, version intégrée, version finale)
-            et suivi de l’avancement par fonctionnalités.
-          </p>
+          <p>Découpage en itérations, définition de jalons clairs — premier rendu, version intégrée, version finale — et
+            suivi par fonctionnalités livrées.</p>
         </article>
-
         <article class="card">
           <h3>Communication</h3>
-          <p>
-            Réunions régulières pour synchroniser les interfaces entre modules, partager les décisions
-            techniques et ajuster le planning si nécessaire.
-          </p>
+          <p>Réunions régulières pour synchroniser les interfaces entre modules, partager les décisions techniques et
+            ajuster le planning selon l’avancement.</p>
         </article>
-
         <article class="card">
-          <h3>Répartition</h3>
-          <p>
-            Chaque membre a une responsabilité principale, tout en contribuant aux revues de code
-            et aux tests de l’application globale.
-          </p>
+          <h3>Pair programming</h3>
+          <p>Travail en binôme sur les intégrations sensibles, en particulier sur le temps réel, les bugs Linux et les
+            phases de finalisation.</p>
         </article>
+      </div>
+    </section>
+
+    <section class="section reveal-on-scroll">
+      <h2 class="section-title">Historique Git</h2>
+      <div class="git-history">
+        <img src="images/git-history.png" alt="Historique Git du projet Spectralis" class="git-image" />
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>Projet Audio Spectrum Analyzer & Synthèse Granulaire – EPITA</p>
-  </footer>
+  <footer class="site-footer">Spectralis — Équipe, organisation et historique de développement.</footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('is-visible');
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal-on-scroll').forEach((el) => observer.observe(el));
+  </script>
 </body>
+
 </html>
