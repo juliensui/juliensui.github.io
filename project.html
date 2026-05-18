@@ -1,148 +1,125 @@
-<!-- En haut de chaque page -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>PROJET</title>
-  <link rel="stylesheet" href="style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spectralis — Projet</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <header class="site-header">
-    <div class="logo">Spectra<span>lis</span></div>
+    <a class="logo" href="index.html">Spectral<span>is</span></a>
     <nav class="main-nav">
-      <a href="index.html" class="nav-link">Accueil</a>
-      <a href="project.html" class="nav-link">Projet</a>
-      <a href="team.html" class="nav-link">Équipe</a>
-      <a href="resources.html" class="nav-link">Ressources</a>
+      <a class="nav-link" href="index.html">Accueil</a>
+      <a class="nav-link" aria-current="page" href="project.html">Projet</a>
+      <a class="nav-link" href="team.html">Équipe</a>
+      <a class="nav-link" href="resources.html">Ressources</a>
     </nav>
   </header>
 
   <main>
-    <main>
-  <section class="section">
-    <h1 class="section-title">Le projet</h1>
-    <p class="section-subtitle">
-      Un analyseur de spectre audio temps réel couplé à un moteur de synthèse granulaire,
-      réalisé dans le cadre du projet de semestre EPITA.
-    </p>
+    <section class="section reveal-on-scroll">
+      <h1 class="section-title">Projet et architecture</h1>
+      <p class="text-muted">
+        Spectralis est un analyseur de spectre audio temps réel couplé à un moteur de synthèse granulaire,
+        réalisé dans le cadre du projet de semestre EPITA. Le projet a été structuré en modules clairs :
+        entrée/sortie audio, analyse fréquentielle, synthèse, interface graphique et coordination temps réel.
+      </p>
+    </section>
 
-    <div class="card-grid">
-      <article class="card">
-        <h2>Objectifs pédagogiques</h2>
-        <p>
-          Concevoir une application audio temps réel, manipuler la FFT, expérimenter la synthèse granulaire
-          et développer une interface graphique ergonomique en respectant un cahier des charges précis.
-        </p>
-      </article>
+    <section class="section reveal-on-scroll">
+      <h2 class="section-title">Architecture modulaire</h2>
+      <div class="card-grid">
+        <article class="card">
+          <h3>I/O audio</h3>
+          <p>Gestion du flux audio en temps réel, récupération des buffers d’échantillons et acheminement vers les modules d’analyse et de synthèse.</p>
+        </article>
+        <article class="card">
+          <h3>Analyse FFT</h3>
+          <p>Calcul du spectre à partir de fenêtres d’échantillons et production de trames fréquentielles réutilisables par l’interface graphique.</p>
+        </article>
+        <article class="card">
+          <h3>Synthèse granulaire</h3>
+          <p>Découpage du signal en grains et recomposition contrôlée par les paramètres utilisateur : taille, densité, pitch et mix.</p>
+        </article>
+        <article class="card">
+          <h3>Interface graphique</h3>
+          <p>Affichage du spectre, réglage des paramètres et retour visuel fluide grâce à une mise à jour régulière des données partagées.</p>
+        </article>
+      </div>
+    </section>
 
-      <article class="card">
-        <h2>Fonctionnalités principales</h2>
-        <ul>
-          <li>Visualisation du spectre fréquentiel en temps réel.</li>
-          <li>Contrôle interactif des paramètres de synthèse granulaire.</li>
-          <li>Lecture, analyse et transformation de signaux audio.</li>
-          <li>Interface graphique moderne et responsive.</li>
-        </ul>
-      </article>
+    <section class="section reveal-on-scroll">
+      <h2 class="section-title">Défis techniques</h2>
+      <div class="card-grid">
+        <article class="card">
+          <h3>Concurrence temps réel</h3>
+          <p>Problème : coordination délicate entre le thread audio temps réel et le thread graphique egui.</p>
+          <ul>
+            <li>Solution : utilisation de buffers circulaires pour le transit des échantillons.</li>
+            <li>Solution : partage d’état via Arc, AtomicU32, AtomicBool et Mutex selon la criticité.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Intégration Linux / audio natif</h3>
+          <p>Problème : compilation et configuration parfois instables autour des dépendances audio natives.</p>
+          <ul>
+            <li>Solution : normalisation stricte de l’architecture du projet et du nommage en snake_case.</li>
+            <li>Solution : ciblage et validation des dépendances ALSA/cpal sur l’environnement Linux.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Liaison FFT ↔ interface</h3>
+          <p>Problème : transmettre des trames spectrales exploitables sans bloquer l’interface ni casser la fluidité.</p>
+          <ul>
+            <li>Solution : découplage du calcul FFT et de l’affichage via structures de données dédiées.</li>
+            <li>Solution : mise à jour incrémentale et repaints réguliers côté GUI.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
 
-      <article class="card">
-        <h2>Technologies utilisées</h2>
-        <ul>
-          <li>Langage Rust pour le cœur du traitement.</li>
-          <li>FFT pour l’analyse de fréquence.</li>
-          <li>Synthèse granulaire pour la transformation du son.</li>
-          <li>Bibliothèque GUI adaptée au projet (Rust).</li>
-        </ul>
-      </article>
-    </div>
-  </section>
+    <section class="section reveal-on-scroll">
+      <h2 class="section-title">Chronologie de réalisation</h2>
+      <p class="section-subtitle">Ligne du temps synthétique de janvier à mai.</p>
+      <div class="timeline">
+        <article class="timeline-item">
+          <h3>Janvier / Février</h3>
+          <p>Choix techniques, cadrage du cahier des charges, définition de l’architecture générale et des modules du moteur audio.</p>
+        </article>
+        <article class="timeline-item">
+          <h3>Mars</h3>
+          <p>Implémentation de la FFT, premières expérimentations sur l’analyse fréquentielle et première interface graphique fonctionnelle.</p>
+        </article>
+        <article class="timeline-item">
+          <h3>Avril</h3>
+          <p>Mise en place de la logique de synthèse granulaire, liaison des données entre analyse, traitement et visualisation.</p>
+        </article>
+        <article class="timeline-item">
+          <h3>Mai</h3>
+          <p>Intégration globale, pair programming, débogage sous Linux, finalisation des livrables et préparation de la soutenance finale.</p>
+        </article>
+      </div>
+    </section>
 
-  <section class="section">
-    <h2 class="section-title">Architecture</h2>
-    <p class="section-subtitle">
-      Le projet est structuré en modules clairs : entrée/sortie audio, analyse fréquentielle, synthèse,
-      et interface graphique.
-    </p>
-
-    <div class="card-grid">
-      <article class="card">
-        <h3>Entrées / Sorties audio</h3>
-        <p>
-          Gestion du flux audio en temps réel, récupération des buffers d’échantillons, et acheminement
-          vers les modules d’analyse et de synthèse.
-        </p>
-      </article>
-
-      <article class="card">
-        <h3>Analyse FFT</h3>
-        <p>
-          Calcul du spectre à partir des fenêtres d’échantillons, production de trames fréquentielles
-          réutilisables par l’interface graphique et la logique de visualisation.
-        </p>
-      </article>
-
-      <article class="card">
-        <h3>Synthèse granulaire</h3>
-        <p>
-          Découpage du signal en grains, recomposition contrôlée par les paramètres utilisateur
-          (taille des grains, densité, hauteur, etc.).
-        </p>
-      </article>
-
-      <article class="card">
-        <h3>Interface graphique</h3>
-        <p>
-          Affichage du spectre, contrôles des paramètres et retour visuel fluide pour l’utilisateur
-          grâce à une mise à jour régulière des données.
-        </p>
-      </article>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2 class="section-title">Conformité au cahier des charges</h2>
-    <p class="section-subtitle">
-      Le projet respecte les contraintes définies dans le sujet libre : objectifs, livrables et aspects techniques.
-    </p>
-
-    <div class="card-grid">
-      <article class="card">
-        <h3>Livrables</h3>
-        <ul>
-          <li>Application fonctionnelle (version complète et version lite).</li>
-          <li>Rapport détaillé du projet.</li>
-          <li>Site web de présentation.</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h3>Contraintes techniques</h3>
-        <ul>
-          <li>Traitement audio en temps réel.</li>
-          <li>Architecture modulaire et claire.</li>
-          <li>Code documenté et structuré.</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h3>Pistes d’évolution</h3>
-        <ul>
-          <li>Effets audio supplémentaires.</li>
-          <li>Préréglages de synthèse.</li>
-          <li>Export des transformations audio.</li>
-        </ul>
-      </article>
-    </div>
-  </section>
-</main>
-
+    <section class="section reveal-on-scroll">
+      <h2 class="section-title">Pistes d’évolution</h2>
+      <p class="text-muted">
+        Le projet peut être prolongé par l’ajout d’effets complémentaires, d’une architecture plugin type VST,
+        d’une meilleure gestion de presets ou encore d’outils de visualisation plus avancés comme un spectrogramme complet.
+      </p>
+    </section>
   </main>
 
-  <footer class="site-footer">
-    <p>Projet Audio Spectrum Analyzer & Synthèse Granulaire – EPITA</p>
-  </footer>
-  <script src="js/main.js"></script>
+  <footer class="site-footer">Spectralis — Architecture, défis techniques et chronologie du projet.</footer>
 
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('is-visible');
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal-on-scroll').forEach((el) => observer.observe(el));
+  </script>
 </body>
 </html>
