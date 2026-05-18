@@ -1,87 +1,89 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>SPECTRALIS</title>
-  <link rel="stylesheet" href="style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spectralis — Accueil</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <header class="site-header">
-    <div class="logo">Spectra<span>lis</span></div>
+    <a class="logo" href="index.html">Spectral<span>is</span></a>
     <nav class="main-nav">
-      <a href="index.html" class="nav-link">Accueil</a>
-      <a href="project.html" class="nav-link">Projet</a>
-      <a href="team.html" class="nav-link">Équipe</a>
-      <a href="resources.html" class="nav-link">Ressources</a>
+      <a class="nav-link" aria-current="page" href="index.html">Accueil</a>
+      <a class="nav-link" href="project.html">Projet</a>
+      <a class="nav-link" href="team.html">Équipe</a>
+      <a class="nav-link" href="resources.html">Ressources</a>
     </nav>
   </header>
 
   <main>
-    <section class="section hero">
+    <section class="section hero reveal-on-scroll">
       <div class="hero-text">
-        <h1>Audio Spectrum <span>& Granular Synth</span></h1>
-        <p>
-          Un analyseur de spectre temps réel couplé à un moteur de synthèse granulaire,
-          développé dans le cadre du projet de semestre EPITA.
-        </p>
-
         <div class="hero-badges">
+          <span class="badge">Projet EPITA</span>
+          <span class="badge">Rust + egui</span>
           <span class="badge">FFT temps réel</span>
           <span class="badge">Synthèse granulaire</span>
-          <span class="badge">Rust + GUI</span>
-          <span class="badge">Projet S4</span>
         </div>
-
+        <h1>Un analyseur de spectre <span>temps réel</span> couplé à un moteur de synthèse granulaire.</h1>
+        <p>
+          Spectralis est le bilan final de notre projet de semestre EPITA. L’application relie capture audio,
+          analyse fréquentielle, traitement granulaire et interface graphique dans une chaîne cohérente,
+          pensée pour être à la fois démonstrative, technique et exploitable en soutenance.
+        </p>
         <div class="hero-actions">
-          <a href="project.html" class="btn-primary">Découvrir le projet</a>
-          <a href="resources.html" class="btn-ghost">Télécharger la version lite</a>
+          <a class="btn-primary" href="project.html">Voir le bilan du projet</a>
+          <a class="btn-ghost" href="resources.html">Téléchargements</a>
         </div>
       </div>
-
       <div class="hero-visual">
         <div class="gui-card">
           <div class="gui-card-inner">
-            <!-- Vraie capture de la GUI -->
-            <img src="gui.png" alt="Interface graphique du spectrogramme et de la synthèse granulaire" class="gui-image">
+            <img src="images/gui.png" alt="Interface graphique du spectrogramme et de la synthèse granulaire" class="gui-image">
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <h2 class="section-title">Fonctionnalités principales</h2>
-      <p class="section-subtitle">
-        Une chaîne audio complète : de l’entrée du signal jusqu’à la visualisation et à la transformation sonore.
-      </p>
-
+    <section class="section reveal-on-scroll">
+      <h2 class="section-title">Fonctionnalités clés</h2>
       <div class="card-grid">
         <article class="card">
           <h3>Analyse de spectre</h3>
-          <p>
-            Visualisation en temps réel du contenu fréquentiel du signal audio grâce à une FFT optimisée.
-          </p>
+          <p>Visualisation en temps réel du contenu fréquentiel du signal audio grâce à une FFT optimisée et intégrée au pipeline temps réel.</p>
         </article>
-
         <article class="card">
           <h3>Synthèse granulaire</h3>
-          <p>
-            Manipulation créative du son par grains : taille, densité, hauteur, pour explorer de nouvelles textures.
-          </p>
+          <p>Manipulation créative du son par grains : taille, densité, pitch et mix de l’effet pour produire de nouvelles textures sonores.</p>
         </article>
-
         <article class="card">
-          <h3>Interface réactive</h3>
-          <p>
-            Contrôles clairs, retour visuel immédiat et expérience fluide pour l’utilisateur.
-          </p>
+          <h3>Interface graphique</h3>
+          <p>Contrôles clairs, retour visuel immédiat et expérience utilisateur fluide grâce à egui et à un partage de données temps réel.</p>
         </article>
+      </div>
+    </section>
+
+    <section class="section reveal-on-scroll">
+      <h2 class="section-title">Bilan final</h2>
+      <div class="kpi-grid">
+        <div class="kpi"><strong>Jan → Mai</strong><span>Chronologie complète du projet</span></div>
+        <div class="kpi"><strong>4 pôles</strong><span>FFT, audio, synthèse, interface</span></div>
+        <div class="kpi"><strong>Défis</strong><span>Problèmes rencontrés et solutions documentées</span></div>
+        <div class="kpi"><strong>Livrables</strong><span>Rapport, sources zip, version lite</span></div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>Projet Audio Spectrum Analyzer & Synthèse Granulaire – EPITA</p>
-  </footer>
+  <footer class="site-footer">Spectralis — Projet de semestre EPITA, soutenance finale.</footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('is-visible');
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal-on-scroll').forEach((el) => observer.observe(el));
+  </script>
 </body>
 </html>
