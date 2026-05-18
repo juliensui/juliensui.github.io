@@ -1,88 +1,128 @@
-<!-- En haut de chaque page -->
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8">
-  <title>RESSOURCES</title>
-  <link rel="stylesheet" href="style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spectralis — Ressources</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
   <header class="site-header">
-    <div class="logo">Spectra<span>lis</span></div>
+    <a class="logo" href="index.html">Spectral<span>is</span></a>
     <nav class="main-nav">
-      <a href="index.html" class="nav-link">Accueil</a>
-      <a href="project.html" class="nav-link">Projet</a>
-      <a href="team.html" class="nav-link">Équipe</a>
-      <a href="resources.html" class="nav-link">Ressources</a>
+      <a class="nav-link" href="index.html">Accueil</a>
+      <a class="nav-link" href="project.html">Projet</a>
+      <a class="nav-link" href="team.html">Équipe</a>
+      <a class="nav-link" aria-current="page" href="resources.html">Ressources</a>
     </nav>
   </header>
 
   <main>
-    <main>
-  <section class="section">
-    <h1 class="section-title">Ressources & téléchargements</h1>
-    <p class="section-subtitle">
-      Retrouvez ici les livrables associés au projet : rapport, code source, version lite de l’application
-      et ressources complémentaires.
-    </p>
+    <section class="section reveal-on-scroll">
+      <h2 class="section-title">Téléchargements</h2>
+      <p class="section-subtitle">
+        Retrouvez ici les livrables associés au projet : rapport final, archive du code source
+        et version lite de l’application.
+      </p>
 
-    <div class="card-grid">
-      <article class="card">
-        <h2>Rapport du projet</h2>
-        <p>
-          Rapport complet décrivant le contexte, les choix techniques, l’architecture, les résultats
-          et les perspectives du projet.
-        </p>
-        <a href="Rendu_Rust_Spectralis-1.pdf" class="btn-primary" download>
-          Télécharger le rapport (PDF)
-        </a>
-      </article>
+      <div class="download-grid">
+        <article class="card download-card">
+          <h3>Rapport de projet</h3>
+          <p>
+            Rapport final du projet présentant le contexte, les objectifs, les choix
+            techniques, l’architecture et les résultats obtenus.
+          </p>
 
-      <article class="card">
-        <h2>Code source</h2>
-        <p>
-          Accès au code source du projet, organisé par modules (audio, FFT, synthèse, interface),
-          accompagné d’instructions de compilation.
-        </p>
-        <a href="https://github.com/Izios515/Spectralis" class="btn-ghost" target="_blank">
-          Voir le dépôt Git
-        </a>
-      </article>
+          <div class="actions">
+            <a class="btn-primary" href="Rendu_Rust_Spectralis.pdf" download>
+              Télécharger le PDF
+            </a>
+          </div>
+        </article>
 
-      <article class="card">
-        <h2>Version lite</h2>
-        <p>
-          Version allégée de l’application, permettant de découvrir les principales fonctionnalités
-          sans configuration avancée.
-        </p>
-        <a href="downloads/version_lite.zip" class="btn-primary" download>
-          Télécharger la version lite
-        </a>
-      </article>
+        <article class="card download-card">
+          <h3>Code source</h3>
+          <p>
+            Archive complète du projet contenant les fichiers Rust, la structure du projet,
+            les ressources et les éléments nécessaires pour l’évaluation.
+          </p>
 
-      <article class="card">
-        <h2>Ressources complémentaires</h2>
-        <p>
-          Liens vers la documentation des bibliothèques utilisées, des articles sur la FFT
-          et la synthèse granulaire, ainsi que des ressources pédagogiques.
-        </p>
-        <ul>
-          <li><a href="#" class="nav-link">Documentation Rust</a></li>
-          <li><a href="#" class="nav-link">Référence FFT</a></li>
-          <li><a href="#" class="nav-link">Introduction à la synthèse granulaire</a></li>
-        </ul>
-      </article>
-    </div>
-  </section>
-</main>
+          <div class="actions">
+            <a class="btn-primary" href="Spectralis.zip" download>
+              Télécharger le code source
+            </a>
+          </div>
+        </article>
 
+        <article class="card download-card">
+          <h3>Version lite</h3>
+          <p>
+            Version légère de l’application permettant une démonstration rapide sans
+            recompiler l’intégralité du projet.
+          </p>
+
+          <div class="actions">
+            <a class="btn-primary" href="Spectralis_Lite.zip" download>
+              Télécharger la version lite
+            </a>
+          </div>
+        </article>
+      </div>
+
+      
+    </section>
+
+    <section class="section reveal-on-scroll">
+      <h2 class="section-title">Ressources complémentaires</h2>
+      <div class="card-grid">
+        <article class="card">
+          <h3>Documentation</h3>
+          <p>Références liées aux bibliothèques Rust utilisées, à l’interface egui et aux dépendances audio temps réel.
+          </p>
+          <p>
+            <a href="https://docs.rs/egui/latest/egui/" target="_blank" rel="noopener noreferrer">
+              Voir la documentation egui
+            </a>
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Analyse fréquentielle</h3>
+          <p>Articles et supports pédagogiques sur la FFT, les fenêtres d’analyse et l’interprétation d’un spectre
+            audio.</p>
+          <p>
+            <a href="https://en.wikipedia.org/wiki/Fast_Fourier_transform" target="_blank" rel="noopener noreferrer">
+              Lire la documentation FFT
+            </a>
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Synthèse granulaire</h3>
+          <p>Documentation de référence sur la manipulation par grains, les paramètres de texture sonore et les
+            perspectives d’évolution.</p>
+          <p>
+            <a href="https://en.wikipedia.org/wiki/Granular_synthesis" target="_blank" rel="noopener noreferrer">
+              Lire la documentation sur la synthèse granulaire
+            </a>
+          </p>
+        </article>
+      </div>
+    </section>
   </main>
 
-  <footer class="site-footer">
-    <p>Projet Audio Spectrum Analyzer & Synthèse Granulaire – EPITA</p>
-  </footer>
-  <script src="js/main.js"></script>
+  <footer class="site-footer">Spectralis — Téléchargements et ressources de soutenance.</footer>
 
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('is-visible');
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal-on-scroll').forEach((el) => observer.observe(el));
+  </script>
 </body>
+
 </html>
